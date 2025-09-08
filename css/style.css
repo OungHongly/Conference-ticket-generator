@@ -1,0 +1,143 @@
+:root {
+  /* FONT SIZE : Scale= 16 x1.25 */
+  --text-sm: 1.2rem; /* 1.28rem*/
+  --text-link: 1.4rem; /* 1.4rem */
+  --text-paragraph: 2rem; /* 1.6rem */
+  --text-h6: 2.3rem;
+  --text-h5: 2.5rem;
+  --text-h4: 3.125rem;
+  --text-h3: 3.906rem;
+  --text-h2: 4.883rem;
+  --text-h1: 6.104rem;
+
+  /* SPACING */
+  --space-xs: 0.4rem; /* 4px */
+  --space-sm: 0.8rem; /* 8px */
+  --space-ms: 1.2rem;
+  --space-md: 1.6rem; /* 16px */
+  --space-ml: 2.4rem;
+  --space-lg: 3.2rem; /* 32px */
+  --space-lx: 4.8rem;
+  --space-xl: 6.4rem; /* 64px */
+  --space-2xl: 12.8rem; /* 128px */
+  /* Guidance:
+  Use:
+    --space-lg or xl for section spacing
+    --space-md for card/grid gap
+    --space-sm for text or button spacing */
+
+  /* FONT WEIGHT */
+  --fw-normal: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-bold: 700;
+
+  /* LINE HEIGHT */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  /* LETTER SPACING : for big letter gap of heading tags*/
+  /* --letter-spacing-tight: -2px; */
+
+  /* FONT FAMILY */
+  --ff-body: "Inconsolata", sans-serif;
+
+  /* COLOR : Tint / Base / Shade */
+  /* Use website: maketintsandshades.com */
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+
+  --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 62.5% of 16px = 10px */
+  /* 62.5% of 24px = 15px */
+  /* When browser change font-size it will scale base on browser font-size */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-normal);
+  line-height: var(--line-height-normal);
+  color: var(--primary-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-bold);
+  line-height: var(--line-height-tight);
+  /* letter-spacing: -2px; NOTE: depend on font */
+  /* color: black; depend on style*/
+}
+
+/* use website Typescale.com */
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+h4 {
+  font-size: var(--text-h4);
+}
+
+h5 {
+  font-size: var(--text-h5);
+}
+
+h6 {
+  font-size: var(--text-h6);
+}
+
+p {
+  /* font size 16px or 20px base on text readability */
+  font-size: var(--text-paragraph);
+}
+
+a {
+  text-decoration: none;
+  font-size: var(--text-link);
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+span {
+  display: inline-block;
+}
+
+.small-text {
+  font-size: var(--text-sm);
+}
+
+.container {
+  max-width: 1200px;
+  /* width 90% so when browser shrink below 1200px the width of the container will be 90% of the web page and make space each side */
+  width: 90%;
+  margin: 0 auto;
+}
