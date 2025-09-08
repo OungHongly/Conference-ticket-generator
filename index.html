@@ -18,24 +18,47 @@
   <body>
 
     <!-- Form starts -->
-
-    Your Journey to Coding Conf 2025 Starts Here!
-
-    Secure your spot at next year's biggest coding conference.
-
-    Upload Avatar
-    Drag and drop or click to upload
-    Upload your photo (JPG or PNG, max size: 500KB).
-
-    Full Name
-
-    Email Address
-    example@email.com
-
-    GitHub Username
-    @yourusername
-
-    Generate My Ticket
+    <section class="form section">
+      <div class="logo">
+        <img src="./assets/images/logo-full.svg" alt="logo">
+      </div>
+      <h1 class="form__heading">Your Journey to Coding Conf 2025 Starts
+        Here!</h1>
+      <p class="form__subheading">Secure your spot at next year's biggest coding
+        conference.</p>
+      <form class="form__container">
+        <label>Upload Avatar
+          <input type="file">
+          <div class="image-view">
+            <div class="file__logo">
+              <img src="./assets/images/icon-upload.svg" alt="upload-icon">
+            </div>
+            <p class="file__upload-text">Drag and drop or click to upload</p>
+          </div>
+        </label>
+        <div class="message--info">
+          <img src="./assets/images/icon-info.svg" alt="icon info"
+            class="message-icon info-icon">
+          <p class="message info">Upload your photo (JPG or PNG, max size:
+            500KB).</p>
+        </div>
+        <div class="message--error hidden">
+          <img src="./assets/images/icon-info.svg" alt="icon info"
+            class="message-icon error-icon">
+          <p class="message error">Upload your photo (JPG or PNG, max size:
+            500KB).</p>
+        </div>
+        <label class="form__label" for="fullName">Full Name</label>
+        <input class="form__input" name="fullName" id="fullName" type="text" />
+        <label class="form__label" for="email">Email Address</label>
+        <input class="form__input" name="email" id="email" type="text"
+          placeholder="example@email.com" />
+        <label class="form__label" for="username">GitHub Username</label>
+        <input class="form__input" name="username" id="username" type="text"
+          placeholder=" @yourusername" />
+        <button class="btn__submit">Generate My Ticket</button>
+      </form>
+    </section>
 
     <!-- Form ends -->
 
