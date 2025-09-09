@@ -1,5 +1,6 @@
 :root {
   /* FONT SIZE : Scale= 16 x1.25 */
+  --text-xs: 1rem;
   --text-sm: 1.2rem; /* 1.28rem*/
   --text-link: 1.4rem; /* 1.4rem */
   --text-paragraph: 2rem; /* 1.6rem */
@@ -46,6 +47,9 @@
   /* Use website: maketintsandshades.com */
   --Neutral-0: hsl(0, 0%, 100%);
   --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-300-01: hsla(252, 6%, 83%, 0.1);
+  --Neutral-300-02: hsla(252, 6%, 83%, 0.2);
+  --Neutral-300-04: hsla(252, 6%, 83%, 0.4);
   --Neutral-500: hsl(245, 15%, 58%);
   --Neutral-700: hsl(245, 19%, 35%);
   --Neutral-900: hsl(248, 70%, 10%);
@@ -148,8 +152,8 @@ body {
 
 /* logo section */
 .logo {
-  padding-top: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  padding-top: var(--space-ml);
+  margin-bottom: var(--space-ml);
 
   display: flex;
   justify-content: center;
@@ -165,18 +169,109 @@ body {
   align-items: center;
 }
 .heading {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   text-align: center;
   font-size: var(--text-h2);
 }
 .subheading {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   color: var(--Neutral-300);
 }
+/* form input */
 .form__container {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width: 100%;
+  max-width: 370px;
+}
+/* file upload */
+.form__label--file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-ms);
+  border-radius: var(--space-sm);
+
+  border: 2px dashed var(--Neutral-300-02);
+  background-color: var(--Neutral-300-01);
+  cursor: pointer;
+
+  margin-bottom: var(--space-ms);
+}
+.file__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm);
+  border-radius: var(--space-sm);
+  background-color: var(--Neutral-300-02);
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--Neutral-300-01);
+}
+.file__image img {
+  width: 25px;
+}
+.file__upload-text {
+  font-size: var(--text-sm);
+}
+.message--upload {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+.message--upload .message-icon {
+  display: block;
+}
+.message--upload .message {
+  font-size: var(--text-xs);
+}
+.info {
+  color: var(--Neutral-300);
+}
+.error {
+  color: var(--Orange-500);
+}
+.info-icon {
+  width: 14px;
+}
+.error-icon {
+  width: 18px;
+  background-color: var(--Orange-500);
+  mask: url("../assets/images/icon-info.svg") no-repeat center;
+  mask-size: 14px;
+}
+/* input field */
+.form__label {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-xs);
+}
+.form__input {
+  padding: var(--space-ms) var(--space-sm);
+  border-radius: var(--space-sm);
+  border: 1px solid var(--Neutral-300-04);
+  background-color: var(--Neutral-300-01);
+
+  margin-bottom: var(--space-md);
+  color: var(--Neutral-300);
+  font-family: var(--ff-body);
+}
+.form__input::placeholder {
+  color: var(--Neutral-300);
+  opacity: 0.8;
+}
+.btn__submit {
+  padding: var(--space-ms);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--space-sm);
+  background-color: var(--Orange-700);
+  border: none;
+
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold);
 }
 
 /* ---- States Classes ---- */
