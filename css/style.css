@@ -1,5 +1,6 @@
 :root {
   /* FONT SIZE : Scale= 16 x1.25 */
+  --text-xs: 1rem;
   --text-sm: 1.2rem; /* 1.28rem*/
   --text-link: 1.4rem; /* 1.4rem */
   --text-paragraph: 2rem; /* 1.6rem */
@@ -46,6 +47,9 @@
   /* Use website: maketintsandshades.com */
   --Neutral-0: hsl(0, 0%, 100%);
   --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-300-01: hsla(252, 6%, 83%, 0.1);
+  --Neutral-300-02: hsla(252, 6%, 83%, 0.2);
+  --Neutral-300-04: hsla(252, 6%, 83%, 0.4);
   --Neutral-500: hsl(245, 15%, 58%);
   --Neutral-700: hsl(245, 19%, 35%);
   --Neutral-900: hsl(248, 70%, 10%);
@@ -72,7 +76,7 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-normal);
   line-height: var(--line-height-normal);
-  color: var(--primary-base);
+  color: var(--Neutral-0);
 }
 
 h1,
@@ -135,9 +139,168 @@ span {
   font-size: var(--text-sm);
 }
 
-.container {
-  max-width: 1200px;
+.section {
+  max-width: 750px;
   /* width 90% so when browser shrink below 1200px the width of the container will be 90% of the web page and make space each side */
   width: 90%;
   margin: 0 auto;
+}
+/* body background */
+body {
+  background-image: url("../assets/images/background-desktop.png");
+}
+
+/* logo section */
+.logo {
+  padding-top: var(--space-ml);
+  margin-bottom: var(--space-ml);
+
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+  height: 25px;
+}
+
+/* Form section */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading {
+  margin-bottom: var(--space-sm);
+  text-align: center;
+  font-size: var(--text-h2);
+}
+.subheading {
+  margin-bottom: var(--space-md);
+  color: var(--Neutral-300);
+}
+/* form input */
+.form__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 370px;
+}
+/* file upload */
+.form__label--file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-ms);
+  border-radius: var(--space-sm);
+
+  border: 2px dashed var(--Neutral-300-02);
+  background-color: var(--Neutral-300-01);
+  cursor: pointer;
+
+  margin-bottom: var(--space-ms);
+}
+.file__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sm);
+  border-radius: var(--space-sm);
+  background-color: var(--Neutral-300-02);
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--Neutral-300-01);
+}
+.file__image img {
+  width: 25px;
+}
+.file__upload-text {
+  font-size: var(--text-sm);
+}
+.btn__file-image {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+.btnFile {
+  background-color: var(--Neutral-300-02);
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+
+  font-family: var(--ff-body);
+  font-size: var(--text-sm);
+  border-radius: var(--space-xs);
+
+  color: var(--Neutral-300);
+  cursor: pointer;
+}
+.btn__remove {
+  text-decoration: underline;
+}
+.message--upload {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+.message--upload .message-icon {
+  display: block;
+}
+.message--upload .message {
+  font-size: var(--text-xs);
+}
+.info {
+  color: var(--Neutral-300);
+}
+.error {
+  color: var(--Orange-500);
+}
+.info-icon {
+  width: 14px;
+}
+.error-icon {
+  width: 18px;
+  background-color: var(--Orange-500);
+  mask: url("../assets/images/icon-info.svg") no-repeat center;
+  mask-size: 14px;
+}
+/* input field */
+.form__label {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-xs);
+}
+.form__input {
+  padding: var(--space-ms) var(--space-sm);
+  border-radius: var(--space-sm);
+  border: 1px solid var(--Neutral-300-04);
+  background-color: var(--Neutral-300-01);
+
+  margin-bottom: var(--space-md);
+  color: var(--Neutral-300);
+  font-family: var(--ff-body);
+}
+.form__input::placeholder {
+  color: var(--Neutral-300);
+  opacity: 0.8;
+}
+#message--email {
+  margin-top: -0.8rem;
+}
+.btn__submit {
+  padding: var(--space-ms);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--space-sm);
+  background-color: var(--Orange-700);
+  border: none;
+
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold);
+}
+
+/* ---- States Classes ---- */
+.hidden {
+  display: none;
+}
+.border-error {
+  border: 1px solid var(--Orange-700);
 }
