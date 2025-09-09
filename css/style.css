@@ -214,6 +214,26 @@ body {
 .file__upload-text {
   font-size: var(--text-sm);
 }
+.btn__file-image {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+.btnFile {
+  background-color: var(--Neutral-300-02);
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+
+  font-family: var(--ff-body);
+  font-size: var(--text-sm);
+  border-radius: var(--space-xs);
+
+  color: var(--Neutral-300);
+  cursor: pointer;
+}
+.btn__remove {
+  text-decoration: underline;
+}
 .message--upload {
   display: flex;
   align-items: center;
@@ -260,6 +280,9 @@ body {
   color: var(--Neutral-300);
   opacity: 0.8;
 }
+#message--email {
+  margin-top: -0.8rem;
+}
 .btn__submit {
   padding: var(--space-ms);
   display: flex;
@@ -277,4 +300,7 @@ body {
 /* ---- States Classes ---- */
 .hidden {
   display: none;
+}
+.border-error {
+  border: 1px solid var(--Orange-700);
 }

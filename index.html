@@ -35,6 +35,10 @@
             <img src="./assets/images/icon-upload.svg" alt="upload-icon">
           </div>
           <p class="file__upload-text">Drag and drop or click to upload</p>
+          <div class="btn__file-image hidden">
+            <button class="btnFile btn__remove">Remove image</button>
+            <button class="btnFile btn__change">Change image</button>
+          </div>
         </label>
         <div class="message--upload" id="message--hint">
           <img src="./assets/images/icon-info.svg" alt="icon info"
@@ -51,8 +55,16 @@
         <label class="form__label" for="fullName">Full Name</label>
         <input class="form__input" name="fullName" id="fullName" type="text" />
         <label class="form__label" for="email">Email Address</label>
-        <input class="form__input" name="email" id="email" type="text"
+        <input class="form__input" name="email" id="email"
+          type="text"
           placeholder="example@email.com" />
+        <div class="message--upload hidden" id="message--email">
+          <img src="./assets/images/icon-info.svg" alt="icon info"
+            class="message-icon error-icon">
+          <p class="message error">
+            Please enter a valid email address.
+          </p>
+        </div>
         <label class="form__label" for="username">GitHub Username</label>
         <input class="form__input" name="username" id="username" type="text"
           placeholder="@yourusername" />
