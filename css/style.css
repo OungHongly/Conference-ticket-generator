@@ -136,7 +136,7 @@ span {
 }
 
 .section {
-  max-width: 900px;
+  max-width: 750px;
   /* width 90% so when browser shrink below 1200px the width of the container will be 90% of the web page and make space each side */
   width: 90%;
   margin: 0 auto;
@@ -160,12 +160,26 @@ body {
 
 /* Form section */
 .form {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading {
+  margin-bottom: var(--space-md);
   text-align: center;
+  font-size: var(--text-h2);
 }
-.ticket {
+.subheading {
+  margin-bottom: var(--space-lg);
+  color: var(--Neutral-300);
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+/* ---- States Classes ---- */
+.hidden {
   display: none;
-}
-.active {
-  display: block;
 }
