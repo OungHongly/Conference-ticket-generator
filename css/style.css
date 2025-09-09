@@ -72,7 +72,7 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-normal);
   line-height: var(--line-height-normal);
-  color: var(--primary-base);
+  color: var(--Neutral-0);
 }
 
 h1,
@@ -135,9 +135,37 @@ span {
   font-size: var(--text-sm);
 }
 
-.container {
-  max-width: 1200px;
+.section {
+  max-width: 900px;
   /* width 90% so when browser shrink below 1200px the width of the container will be 90% of the web page and make space each side */
   width: 90%;
   margin: 0 auto;
+}
+/* body background */
+body {
+  background-image: url("../assets/images/background-desktop.png");
+}
+
+/* logo section */
+.logo {
+  padding-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+  height: 25px;
+}
+
+/* Form section */
+.form {
+  display: none;
+  text-align: center;
+}
+.ticket {
+  display: none;
+}
+.active {
+  display: block;
 }
