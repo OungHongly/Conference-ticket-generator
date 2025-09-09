@@ -139,18 +139,19 @@ span {
   font-size: var(--text-sm);
 }
 
+/*----------- Section Container --------- */
 .section {
   max-width: 750px;
   /* width 90% so when browser shrink below 1200px the width of the container will be 90% of the web page and make space each side */
   width: 90%;
   margin: 0 auto;
 }
-/* body background */
+/*---------- body background ---------*/
 body {
   background-image: url("../assets/images/background-desktop.png");
 }
 
-/* logo section */
+/*-------- logo section ---------*/
 .logo {
   padding-top: var(--space-ml);
   margin-bottom: var(--space-ml);
@@ -162,7 +163,7 @@ body {
   height: 25px;
 }
 
-/* Form section */
+/*----------- Form section------------ */
 .form {
   display: flex;
   flex-direction: column;
@@ -184,7 +185,8 @@ body {
   width: 100%;
   max-width: 370px;
 }
-/* file upload */
+
+/*-------- file upload ----------*/
 .form__label--file {
   display: flex;
   flex-direction: column;
@@ -214,6 +216,8 @@ body {
 .file__upload-text {
   font-size: var(--text-sm);
 }
+
+/* --------Button Image upload --------*/
 .btn__file-image {
   display: flex;
   justify-content: center;
@@ -234,6 +238,8 @@ body {
 .btn__remove {
   text-decoration: underline;
 }
+
+/* ---------File input error message -------- */
 .message--upload {
   display: flex;
   align-items: center;
@@ -261,7 +267,8 @@ body {
   mask: url("../assets/images/icon-info.svg") no-repeat center;
   mask-size: 14px;
 }
-/* input field */
+
+/* -------- input field--------- */
 .form__label {
   font-size: 1.6rem;
   margin-bottom: var(--space-xs);
@@ -283,6 +290,8 @@ body {
 #message--email {
   margin-top: -0.8rem;
 }
+
+/* ----- Button Submit ------- */
 .btn__submit {
   padding: var(--space-ms);
   display: flex;
