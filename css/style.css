@@ -304,6 +304,8 @@ body {
 
   font-family: var(--ff-body);
   font-weight: var(--fw-bold);
+
+  cursor: pointer;
 }
 
 /* ---- States Classes ---- */
