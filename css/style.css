@@ -58,6 +58,17 @@
   --Orange-700: hsl(7, 71%, 60%);
 
   --Gradient-text: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+
+  /* ---- Background Image ---- */
+  --line-overlay: url("../assets/images/pattern-lines.svg");
+  --circle1-overlay: url("../assets/images//pattern-circle.svg");
+  --circle2-overlay: url("../assets/images//pattern-circle.svg");
+
+  --squiggly-line-top: url("../assets/images/pattern-squiggly-line-top.svg");
+  --squiggly-line-desktop: url("../assets/images/pattern-squiggly-line-bottom-desktop.svg");
+  --squiggly-line-mobile: url("../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg");
+  --main-bg-desktop: url("../assets/images/background-desktop.png");
+  --main-bg-mobile: url("../assets/images/background-mobile.png");
 }
 * {
   box-sizing: border-box;
@@ -148,7 +159,7 @@ span {
 }
 /*---------- body background ---------*/
 body {
-  background-image: url("../assets/images/background-desktop.png");
+  background-image: var(--main-bg-desktop);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -157,18 +168,16 @@ body {
 }
 .bg--overlay {
   position: absolute;
-  background-image: url("../assets/images/pattern-lines.svg"),
-    url("../assets/images//pattern-circle.svg"),
-    url("../assets/images//pattern-circle.svg"),
-    url("../assets/images/pattern-squiggly-line-top.svg"),
-    url("../assets/images/pattern-squiggly-line-bottom-desktop.svg");
+  background-image: var(--line-overlay), var(--circle1-overlay),
+    var(--circle2-overlay), var(--squiggly-line-top),
+    var(--squiggly-line-desktop);
   background-repeat: no-repeat;
   background-position: center top, top -60px left 35px, center right 20%,
     top 40px right, bottom left;
   background-size: auto, auto, auto, 30vw, 40vw;
   top: 0;
   left: 0;
-  min-height: 100vh;
+  height: 100%;
   z-index: -9;
   width: 100%;
 }
@@ -470,6 +479,10 @@ body {
   }
 }
 @media (max-width: 375px) {
+  :root {
+    --squiggly-line-desktop: url("../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg");
+    --main-bg-desktop: url("../assets/images/background-mobile.png");
+  }
   .logo {
     padding-top: var(--space-xl);
   }
