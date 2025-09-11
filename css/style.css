@@ -323,6 +323,7 @@ body {
   border-radius: var(--space-sm);
   background-color: var(--Orange-700);
   border: none;
+  margin-bottom: var(--space-lg);
 
   font-family: var(--ff-body);
   font-weight: var(--fw-bold);
