@@ -33,9 +33,10 @@
       <form class="form__container">
         <!-- Drap and Drop File -->
         <label class="form__label">Upload Avatar</label>
-        <label class="form__label--file">
-          <input type="file" hidden>
-          <div class="file__image">
+
+        <label class="form__label--file" id="drop-area">
+          <input type="file" accept="image/*" hidden id="input-file">
+          <div class="file__image" id="image-view">
             <img src="./assets/images/icon-upload.svg" alt="upload-icon">
           </div>
           <p class="file__upload-text">Drag and drop or click to upload</p>
@@ -44,6 +45,7 @@
             <button class="btnFile btn__change">Change image</button>
           </div>
         </label>
+
         <div class="message--upload" id="message--hint">
           <img src="./assets/images/icon-info.svg" alt="icon info"
             class="message-icon info-icon">
