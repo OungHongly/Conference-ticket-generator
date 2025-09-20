@@ -11,6 +11,9 @@ const uploadIcon = document.getElementById("upload--icon");
 const messageHint = document.getElementById("message--hint");
 const messageError = document.getElementById("message--error");
 
+const btnRemove = document.querySelector(".btn__remove");
+const btnChange = document.querySelector(".btn__change");
+
 // Hide error image upload success
 const uploadSuccess = function () {
   uploadIcon.classList.add("hidden");
@@ -38,6 +41,8 @@ const uploadImage = function () {
   const file = inputFile.files[0];
   const maxSize = 500 * 1024;
 
+  if (!file) return;
+
   if (file.size > maxSize) {
     imageView.style.backgroundImage = "";
     uploadError();
@@ -60,4 +65,25 @@ dropArea.addEventListener("drop", function (e) {
   e.preventDefault();
   inputFile.files = e.dataTransfer.files;
   uploadImage();
+});
+
+//Remove image
+btnRemove.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  inputFile.value = "";
+  imageView.style.backgroundImage = "";
+  uploadIcon.classList.remove("hidden");
+
+  messageError.classList.add("hidden");
+  messageHint.classList.remove("hidden");
+
+  inputText.classList.remove("hidden");
+  btnImage.classList.add("hidden");
+});
+
+//Change image
+btnChange.addEventListener("click", (e) => {
+  e.preventDefault();
+  inputFile.click();
 });
