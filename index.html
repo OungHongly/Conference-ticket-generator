@@ -62,6 +62,13 @@
 
         <label class="form__label" for="fullName">Full Name</label>
         <input class="form__input" name="fullName" id="fullName" type="text" />
+        <div class="message--upload hidden" id="message--fullName">
+          <img src="./assets/images/icon-info.svg" alt="icon info"
+            class="message-icon error-icon">
+          <p class="message error" id="fullName--message">
+            Please enter your full name.
+          </p>
+        </div>
         <label class="form__label" for="email">Email Address</label>
         <input class="form__input" name="email" id="email"
           type="text"
@@ -76,6 +83,13 @@
         <label class="form__label" for="username">GitHub Username</label>
         <input class="form__input" name="username" id="username" type="text"
           placeholder="@yourusername" />
+        <div class="message--upload hidden" id="message--username">
+          <img src="./assets/images/icon-info.svg" alt="icon info"
+            class="message-icon error-icon">
+          <p class="message error" id="username--message">
+            Please enter your username.
+          </p>
+        </div>
         <button type="submit" class="btn__submit">Generate My Ticket</button>
       </form>
       <!-- Form field end -->

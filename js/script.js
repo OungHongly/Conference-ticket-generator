@@ -15,6 +15,12 @@ const btnRemove = document.querySelector(".btn__remove");
 const btnChange = document.querySelector(".btn__change");
 
 const form = document.querySelector(".form__container");
+const inputFullName = document.getElementById("fullName");
+const fullNameErrorMessage = document.getElementById("message--fullName");
+const inputUserName = document.getElementById("username");
+const usernameErrorMessage = document.getElementById("message--username");
+// const fullNameMessage = document.getElementById("fullName--message");
+
 const inputEmail = document.getElementById("email");
 const emailErrorMessage = document.getElementById("message--email");
 const emailMessage = document.getElementById("email--message");
@@ -112,12 +118,33 @@ const emailValidation = function () {
   }
 };
 
+const fullNameValidation = function () {
+  if (inputFullName.value.trim() === "") {
+    fullNameErrorMessage.classList.remove("hidden");
+    return false;
+  } else {
+    fullNameErrorMessage.classList.add("hidden");
+    return true;
+  }
+};
+const usernameValidation = function () {
+  if (inputUserName.value.trim() === "") {
+    usernameErrorMessage.classList.remove("hidden");
+    return false;
+  } else {
+    usernameErrorMessage.classList.add("hidden");
+    return true;
+  }
+};
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const emailValid = emailValidation();
+  const fullNameValid = fullNameValidation();
+  const usernameValid = usernameValidation();
 
-  if (emailValid) {
+  if (emailValid && fullNameValid && usernameValid) {
     form.submit();
   }
 });
