@@ -238,8 +238,13 @@ body {
   padding: var(--space-sm);
   border-radius: var(--space-sm);
   background-color: var(--Neutral-300-02);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
   border: 1px solid var(--Neutral-300-01);
+  width: 48px;
+  height: 48px;
+
+  background-position: center;
+  background-size: cover;
 }
 .file__image img {
   width: 25px;

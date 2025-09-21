@@ -31,11 +31,14 @@
         conference.</p>
       <!-- Form field -->
       <form class="form__container">
+        <!-- Drap and Drop File -->
         <label class="form__label">Upload Avatar</label>
-        <label class="form__label--file">
-          <input type="file" hidden>
-          <div class="file__image">
-            <img src="./assets/images/icon-upload.svg" alt="upload-icon">
+
+        <label class="form__label--file" id="drop-area">
+          <input type="file" accept="image/*" hidden id="input-file">
+          <div class="file__image" id="image-view">
+            <img src="./assets/images/icon-upload.svg" alt="upload-icon"
+              id="upload--icon">
           </div>
           <p class="file__upload-text">Drag and drop or click to upload</p>
           <div class="btn__file-image hidden">
@@ -43,6 +46,7 @@
             <button class="btnFile btn__change">Change image</button>
           </div>
         </label>
+
         <div class="message--upload" id="message--hint">
           <img src="./assets/images/icon-info.svg" alt="icon info"
             class="message-icon info-icon">
@@ -55,6 +59,7 @@
           <p class="message error">File too large. Please upload a photo under
             500KB.</p>
         </div>
+
         <label class="form__label" for="fullName">Full Name</label>
         <input class="form__input" name="fullName" id="fullName" type="text" />
         <label class="form__label" for="email">Email Address</label>
@@ -64,14 +69,14 @@
         <div class="message--upload hidden" id="message--email">
           <img src="./assets/images/icon-info.svg" alt="icon info"
             class="message-icon error-icon">
-          <p class="message error">
+          <p class="message error" id="email--message">
             Please enter a valid email address.
           </p>
         </div>
         <label class="form__label" for="username">GitHub Username</label>
         <input class="form__input" name="username" id="username" type="text"
           placeholder="@yourusername" />
-        <button class="btn__submit">Generate My Ticket</button>
+        <button type="submit" class="btn__submit">Generate My Ticket</button>
       </form>
       <!-- Form field end -->
     </section>
