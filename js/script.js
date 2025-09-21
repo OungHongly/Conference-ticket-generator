@@ -14,6 +14,11 @@ const messageError = document.getElementById("message--error");
 const btnRemove = document.querySelector(".btn__remove");
 const btnChange = document.querySelector(".btn__change");
 
+const form = document.querySelector(".form__container");
+const inputEmail = document.getElementById("email");
+const emailErrorMessage = document.getElementById("message--email");
+const emailMessage = document.getElementById("email--message");
+
 // Hide error image upload success
 const uploadSuccess = function () {
   uploadIcon.classList.add("hidden");
@@ -86,4 +91,33 @@ btnRemove.addEventListener("click", (e) => {
 btnChange.addEventListener("click", (e) => {
   e.preventDefault();
   inputFile.click();
+});
+
+// Check email function
+const emailValidation = function () {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (inputEmail.value.trim() === "") {
+    console.log("empty");
+    emailErrorMessage.classList.remove("hidden");
+    emailMessage.textContent = "Please add your email!";
+    return false;
+  } else if (!regex.test(inputEmail.value.trim())) {
+    emailErrorMessage.classList.toggle("hidden");
+    emailMessage.textContent = "Please enter a valid email address.";
+    return false;
+  } else {
+    emailErrorMessage.classList.add("hidden");
+    return true;
+  }
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const emailValid = emailValidation();
+
+  if (emailValid) {
+    form.submit();
+  }
 });
