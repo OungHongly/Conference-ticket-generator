@@ -9,6 +9,8 @@ const btnImage = document.querySelector(".btn__file-image");
 const uploadIcon = document.getElementById("upload--icon");
 
 const messageHint = document.getElementById("message--hint");
+const messageInfo = document.getElementById("message--info");
+const infoIcon = document.querySelector(".info-icon");
 const messageError = document.getElementById("message--error");
 
 const btnRemove = document.querySelector(".btn__remove");
@@ -24,6 +26,8 @@ const usernameErrorMessage = document.getElementById("message--username");
 const inputEmail = document.getElementById("email");
 const emailErrorMessage = document.getElementById("message--email");
 const emailMessage = document.getElementById("email--message");
+
+let fullName, email, username, file;
 
 // Hide error image upload success
 const uploadSuccess = function () {
@@ -137,14 +141,28 @@ const usernameValidation = function () {
   }
 };
 
+const uploadFileValidation = function () {
+  if (!inputFile.files[0]) {
+    messageInfo.classList.remove("info");
+    messageInfo.classList.add("error");
+    infoIcon.classList.add("error-icon");
+    return false;
+  } else {
+    messageInfo.classList.remove("error");
+    messageInfo.classList.add("info");
+    infoIcon.classList.remove("error-icon");
+    return true;
+  }
+};
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const emailValid = emailValidation();
   const fullNameValid = fullNameValidation();
   const usernameValid = usernameValidation();
-
-  if (emailValid && fullNameValid && usernameValid) {
+  const uploadFileValid = uploadFileValidation();
+  if (emailValid && fullNameValid && usernameValid && uploadFileValid) {
     form.submit();
   }
 });
