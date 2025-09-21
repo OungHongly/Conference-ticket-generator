@@ -1,6 +1,9 @@
 "Use strict";
 
 // Select elements
+const formSection = document.querySelector(".form");
+const ticketSection = document.querySelector(".ticket");
+
 const dropArea = document.getElementById("drop-area");
 const inputFile = document.getElementById("input-file");
 const imageView = document.getElementById("image-view");
@@ -108,7 +111,6 @@ const emailValidation = function () {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (inputEmail.value.trim() === "") {
-    console.log("empty");
     emailErrorMessage.classList.remove("hidden");
     emailMessage.textContent = "Please add your email!";
     return false;
@@ -163,6 +165,14 @@ form.addEventListener("submit", (e) => {
   const usernameValid = usernameValidation();
   const uploadFileValid = uploadFileValidation();
   if (emailValid && fullNameValid && usernameValid && uploadFileValid) {
-    form.submit();
+    fullName = inputFullName.value.trim();
+    email = inputEmail.value.trim();
+    username = inputUserName.value.trim();
+    file = URL.createObjectURL(inputFile.files[0]);
+
+    setTimeout(() => {
+      formSection.classList.add("hidden");
+      ticketSection.classList.remove("hidden");
+    }, 3000);
   }
 });
