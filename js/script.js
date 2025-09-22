@@ -18,6 +18,7 @@ const messageError = document.getElementById("message--error");
 
 const btnRemove = document.querySelector(".btn__remove");
 const btnChange = document.querySelector(".btn__change");
+const btnSubmit = document.querySelector(".btn__submit");
 
 const form = document.querySelector(".form__container");
 const inputFullName = document.getElementById("fullName");
@@ -170,7 +171,13 @@ form.addEventListener("submit", (e) => {
     username = inputUserName.value.trim();
     file = URL.createObjectURL(inputFile.files[0]);
 
+    let dots = 0;
+    const loadingInteral = setInterval(() => {
+      dots = (dots + 1) % 4; // cycle 0 - 1-2-3-back to 0
+      btnSubmit.textContent = "Loading" + ".".repeat(dots);
+    }, 500);
     setTimeout(() => {
+      clearInterval(loadingInteral);
       formSection.classList.add("hidden");
       ticketSection.classList.remove("hidden");
     }, 3000);
