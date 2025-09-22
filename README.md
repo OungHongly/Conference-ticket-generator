@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/OungHongly/Conference-ticket-generator.git)
-- Live Site URL: [Live Server](https://your-live-site-url.com)
+- Live Site URL: [Live Server](https://ounghongly.github.io/Conference-ticket-generator/)
 
 ## My process
 
