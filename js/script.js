@@ -31,6 +31,14 @@ const inputEmail = document.getElementById("email");
 const emailErrorMessage = document.getElementById("message--email");
 const emailMessage = document.getElementById("email--message");
 
+// const ticketEmail = document.getElementById("ticket--email");
+const ticketUsername = document.getElementById("ticket--username");
+const userEmail = document.getElementById("user--email");
+const userName = document.getElementById("user--name");
+const ticketImage = document.querySelector(".ticket__profile");
+const userUsername = document.getElementById("user--username");
+const ticketId = document.getElementById("ticket--id");
+
 let fullName, email, username, file;
 
 // Hide error image upload success
@@ -158,6 +166,19 @@ const uploadFileValidation = function () {
   }
 };
 
+const displayUserTicket = function (un, ue, uun, fl, id) {
+  ticketUsername.textContent = un;
+  userEmail.textContent = ue;
+  userName.textContent = un;
+  userUsername.textContent = uun;
+  ticketImage.style.backgroundImage = `url(${fl})`;
+  ticketId.textContent = "#0" + id;
+};
+const generateTicketId = function () {
+  const randomNum = Math.round(Math.random() * 9000) + 1000;
+  return randomNum;
+};
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -170,6 +191,7 @@ form.addEventListener("submit", (e) => {
     email = inputEmail.value.trim();
     username = inputUserName.value.trim();
     file = URL.createObjectURL(inputFile.files[0]);
+    id = generateTicketId();
 
     let dots = 0;
     const loadingInteral = setInterval(() => {
@@ -180,6 +202,7 @@ form.addEventListener("submit", (e) => {
       clearInterval(loadingInteral);
       formSection.classList.add("hidden");
       ticketSection.classList.remove("hidden");
+      displayUserTicket(fullName, email, username, file, id);
     }, 3000);
   }
 });

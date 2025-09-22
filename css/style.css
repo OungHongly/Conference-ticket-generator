@@ -395,6 +395,8 @@ body {
 .ticket__profile {
   width: 45px;
   height: 45px;
+  background-position: center;
+  background-size: cover;
   overflow: hidden;
   border-radius: var(--space-sm);
 }
