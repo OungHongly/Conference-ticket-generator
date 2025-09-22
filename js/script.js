@@ -170,7 +170,7 @@ const displayUserTicket = function (un, ue, uun, fl, id) {
   ticketUsername.textContent = un;
   userEmail.textContent = ue;
   userName.textContent = un;
-  userUsername.textContent = uun;
+  userUsername.textContent = "@" + uun;
   ticketImage.style.backgroundImage = `url(${fl})`;
   ticketId.textContent = "#0" + id;
 };
